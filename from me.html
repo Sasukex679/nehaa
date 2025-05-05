@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You Are More Than Your Marks</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #dbeafe, #f0f9ff);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    h2 {
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 30px;
+    }
+    button {
+      background: #2563eb;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Hey, Take a Breath 🌸</h2>
+    <p id="message">You are not your marks. You are your effort, your heart, your dreams.</p>
+    <button onclick="nextMessage()">Next 💬</button>
+  </div>
+
+  <script>
+    const messages = [
+      "You are not your marks. You are your effort, your heart, your dreams.",
+      "One bad exam can’t decide your whole life. You're much more than that.",
+      "It's okay to fall. What matters is rising again — and you will.",
+      "I believe in you, even when you don’t. And I’ll keep doing that.",
+      "You’re not alone in this. I'm right here, always. 💙"
+    ];
+    let index = 0;
+    function nextMessage() {
+      index = (index + 1) % messages.length;
+      document.getElementById("message").innerText = messages[index];
+    }
+  </script>
+</body>
+</html>
